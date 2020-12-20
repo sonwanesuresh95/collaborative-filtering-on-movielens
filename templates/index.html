@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collaborative Filtering</title>
+</head>
+<body>
+<h1 align="center">Collaborative Filtering using Correlation similarity</h1>
+<p align="center">Item-based collaborative filtering</p>
+<br>
+<p><b>Collaborative Filtering:</b></p>
+This type of recommendation systems recommends similar content based on similar users.<br>
+Two types of Collaborative filtering:<br>
+A. Memory Based   B. Model Based<br><br>
+<p><b>This project:</b></p>
+This type of recommendation system uses correlation similarity to find <br>and recommend similar items that have been rated by multiple users.<br>
+This is a Memory Based approach.
+<br>
+<br>
+<h3 align="center">Enter last watched movie</h3>
+<p align="center"> (This action mocks last watched movie. By selecting a movie from this list, you enter user's last watched movie)</p>
+<center>
+<form action="/recommend" method="post">
+  <select name="titles" id="titles">
+    <option value=1>Star Wars (1977)</option>
+    <option value=2>Contact (1997)</option>
+    <option value=3>Fargo (1996)</option>
+    <option value=4>Return of the Jedi (1983)</option>
+    <option value=5>English Patient, The (1996)</option>
+    <option value=6>Scream (1996)</option>
+    <option value=7>Toy Story (1995)</option>
+    <option value=8>Air Force One (1997)</option>
+  </select>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+<p align="center">Selected Movie: {{title}}</p>
+<p align="center">Next Similar Movies to watch</p>
+<table border="2">
+  <tr>
+    {% for title in most_similar: %}
+    <td>{{title}}</td>
+    {% endfor %}
+  </tr>
+</table>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </center>
+</body>
+</html>
